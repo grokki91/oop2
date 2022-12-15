@@ -10,7 +10,7 @@ export default class Character {
     }
 
     const typeArray = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
-    if (!this.type.includes(typeArray)) {
+    if (!this.type.includes(...typeArray)) {
       throw new Error('Некорректный тип персонажа');
     }
   }
