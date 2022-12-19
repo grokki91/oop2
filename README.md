@@ -1,1 +1,1 @@
-# Simple game with Characters
+# Simple game2 with Characters

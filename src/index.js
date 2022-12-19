@@ -1,19 +1,22 @@
 import Bowerman from './app/Bowerman';
+import Character from './app/Character';
 import Daemon from './app/Daemon';
 import Magician from './app/Magician';
 import Swordsman from './app/Swordsman';
 import Undead from './app/Undead';
 import Zombie from './app/Zombie ';
 
+const hero = new Character('hero', 'Swordsman');
+console.log(hero);
 const bowerman = new Bowerman('Bowerman', 'Bowman');
 console.log(bowerman);
-const daemon = new Daemon('Demon', 'Bowman');
+const daemon = new Daemon('Demon', 'Demon');
 console.log(daemon);
-const magician = new Magician('Mag', 'Bowman');
+const magician = new Magician('Mag', 'Magician');
 console.log(magician);
-const swordsman = new Swordsman('Swordsman', 'Bowman');
+const swordsman = new Swordsman('Swordsman', 'Swordsman');
 console.log(swordsman);
-const undead = new Undead('Dead', 'Bowman');
+const undead = new Undead('Dead', 'Undead');
 console.log(undead);
-const zombie = new Zombie('Zombie', 'Bowman');
+const zombie = new Zombie('Zombie', 'Zombie');
 console.log(zombie);

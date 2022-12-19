@@ -1,4 +1,6 @@
 import Character from '../app/Character';
+import Daemon from '../app/Daemon';
+import Undead from '../app/Undead';
 
 describe('Check field name in class Character', () => {
   test('Check empty name in class Character', () => {
@@ -14,14 +16,58 @@ describe('Check field name in class Character', () => {
       health: 100,
       level: 1,
       name: 'Monster',
-      type: 'Bowman',
+      type: 'Bowerman',
+      attack: 0,
+      defence: 0,
     };
-    expect(new Character('Monster', 'Bowman')).toEqual(expextedHero);
+    expect(new Character('Monster', 'Bowerman')).toEqual(expextedHero);
   });
 });
 
 describe('Check field type in class Character', () => {
   test('Check wrong value in type', () => {
     expect(() => new Character('Monster', '')).toThrow();
+  });
+});
+
+// Second task tests
+
+describe('Check function levelUp', () => {
+  const hero = new Character('hero', 'Swordsman');
+
+  test('Check throw in zero health', () => {
+    hero.health = 0;
+    expect(() => hero.levelUp()).toThrow();
+  });
+
+  test('Check change skills ', () => {
+    const demon = new Daemon('Demon', 'Daemon');
+    const expextedHero = {
+      health: 100,
+      level: 2,
+      name: 'Demon',
+      type: 'Daemon',
+      attack: 12,
+      defence: 48,
+    };
+    demon.levelUp();
+    expect(demon).toEqual(expextedHero);
+  });
+});
+
+describe('Check function damage', () => {
+  const undead = new Undead('MrDead', 'Undead');
+
+  test('Check the correct argument', () => {
+    const expextedHero = {
+      health: 62.5,
+      level: 1,
+      name: 'MrDead',
+      type: 'Undead',
+      attack: 25,
+      defence: 25,
+    };
+    undead.damage(50);
+    expect(undead).toEqual(expextedHero);
   });
 });
